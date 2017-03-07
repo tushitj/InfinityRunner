@@ -11,6 +11,7 @@ import GameplayKit
 
 class GameScene: SKScene {
     var movingGround: MovingGround!
+    var hero : Hero!
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
@@ -23,6 +24,9 @@ class GameScene: SKScene {
         //ground.position = view.center
         movingGround.position = CGPoint(x: 0, y: view.frame.size.height/2)
         addChild(movingGround)
+        hero = Hero()
+        hero.position = CGPoint(x:70 ,y:movingGround.position.y + movingGround.size.height/2 + hero.frame.size.height/2)
+        addChild(hero)
 
     }
     
