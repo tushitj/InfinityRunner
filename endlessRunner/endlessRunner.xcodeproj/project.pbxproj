@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1705449F1E727EF00023F98E /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1705449E1E727EF00023F98E /* bg.jpg */; };
+		170544A11E728BC00023F98E /* cloudGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170544A01E728BC00023F98E /* cloudGenerator.swift */; };
+		177ED9411E722CDD0006C78E /* bee.png in Resources */ = {isa = PBXBuildFile; fileRef = 177ED9401E722CDD0006C78E /* bee.png */; };
 		17AF05B51E6E3CDC001A4A1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF05B41E6E3CDC001A4A1B /* AppDelegate.swift */; };
 		17AF05B91E6E3CDC001A4A1B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17AF05B81E6E3CDC001A4A1B /* Actions.sks */; };
 		17AF05BB1E6E3CDC001A4A1B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF05BA1E6E3CDC001A4A1B /* GameScene.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1705449E1E727EF00023F98E /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		170544A01E728BC00023F98E /* cloudGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloudGenerator.swift; sourceTree = "<group>"; };
+		177ED9401E722CDD0006C78E /* bee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bee.png; sourceTree = "<group>"; };
 		17AF05B11E6E3CDC001A4A1B /* endlessRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = endlessRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AF05B41E6E3CDC001A4A1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17AF05B81E6E3CDC001A4A1B /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 				17AF05B41E6E3CDC001A4A1B /* AppDelegate.swift */,
 				17AF05B81E6E3CDC001A4A1B /* Actions.sks */,
 				17AF05BA1E6E3CDC001A4A1B /* GameScene.swift */,
+				170544A01E728BC00023F98E /* cloudGenerator.swift */,
 				17AF05E81E6E5E2D001A4A1B /* MovingGround.swift */,
 				17EBF2F11E6F2AF200D523F9 /* Hero.swift */,
 				17AF05BC1E6E3CDC001A4A1B /* GameViewController.swift */,
@@ -115,6 +122,8 @@
 				17AF05C11E6E3CDC001A4A1B /* Assets.xcassets */,
 				17AF05C31E6E3CDC001A4A1B /* LaunchScreen.storyboard */,
 				17AF05C61E6E3CDC001A4A1B /* Info.plist */,
+				1705449E1E727EF00023F98E /* bg.jpg */,
+				177ED9401E722CDD0006C78E /* bee.png */,
 			);
 			path = endlessRunner;
 			sourceTree = "<group>";
@@ -248,8 +257,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				17AF05C01E6E3CDC001A4A1B /* Main.storyboard in Resources */,
+				177ED9411E722CDD0006C78E /* bee.png in Resources */,
 				17AF05C21E6E3CDC001A4A1B /* Assets.xcassets in Resources */,
 				17AF05C51E6E3CDC001A4A1B /* LaunchScreen.storyboard in Resources */,
+				1705449F1E727EF00023F98E /* bg.jpg in Resources */,
 				17AF05B91E6E3CDC001A4A1B /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +289,7 @@
 				17EBF2F21E6F2AF200D523F9 /* Hero.swift in Sources */,
 				17AF05E91E6E5E2D001A4A1B /* MovingGround.swift in Sources */,
 				17AF05BB1E6E3CDC001A4A1B /* GameScene.swift in Sources */,
+				170544A11E728BC00023F98E /* cloudGenerator.swift in Sources */,
 				17AF05BD1E6E3CDC001A4A1B /* GameViewController.swift in Sources */,
 				17AF05B51E6E3CDC001A4A1B /* AppDelegate.swift in Sources */,
 			);
