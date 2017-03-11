@@ -10,19 +10,26 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-    var movingGround: MovingGround!
-    var hero : Hero!
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
-   // var background = SKSpriteNode(imageNamed: "bg.jpg")
+    
+    var movingGround: MovingGround!
+    var hero : Hero!
+    var cloudGen : cloudGenerator!
+    var wallGen : WallGenerator!
+    
+    var lastTime : TimeInterval = 0
     var isStarted = false
     
     override func didMove(to view: SKView) {
-        //background.position = CGPoint(x: frame.size.width, y: frame.size.height)
+        view.showsNodeCount = true;
         backgroundColor = UIColor(red: 150/250, green: 200/250, blue: 244/255, alpha: 1.90)
-        //addChild(background)
-        
-        
+    
+        //let backgroundTexture = SKTexture(imageNamed: "bg.jpg")
+        //let backgroundImage = SKSpriteNode(texture: backgroundTexture , size: view.frame.size)
+        //backgroundImage.position = view.center
+        //addChild(backgroundImage)
+        //makeBackground()
         //let ground = SKSpriteNode(color: .red, size: CGSize(width :view.frame.size.width , height : 20))
         movingGround = MovingGround(size: CGSize(width: view.frame.width, height: 20))
         //ground.position = view.center
@@ -32,13 +39,37 @@ class GameScene: SKScene {
         hero.position = CGPoint(x:70 ,y:movingGround.position.y + movingGround.size.height/2 + hero.frame.size.height/2)
         addChild(hero)
         hero.breathe()
+        //let r = Timer(5)
+        cloudGen = cloudGenerator(color: UIColor.clear, size: view.frame.size)
+        cloudGen.position = view.center
+        addChild(cloudGen)
+        cloudGen.populate(num: 7)
+        //cloudGen.startGenWithSpanTime(seconds: 5)
+        
+        
+        wallGen = WallGenerator(color: UIColor.clear,size:view.frame.size)
+        wallGen.position = view.center
+        addChild(wallGen)
+        
+        let tapToStart = SKLabelNode(text: "Tap to Start!")
+        tapToStart.name = "startLabel"
+        tapToStart.fontName = "Helvetica"
+        tapToStart.position.x = view.center.x
+        tapToStart.position.y = view.center.y + 35
+        tapToStart.fontColor = UIColor.brown
+        addChild(tapToStart)
+       
 
     }
     
     func start(){
         isStarted=true
-        hero.breathe()
+        let tapToStart = childNode(withName: "startLabel")
+        tapToStart?.removeFromParent()
+        hero.stop()
+        //hero.breathe()
         movingGround.start()
+         wallGen.startGeneratingWall(seconds: 1)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -50,8 +81,33 @@ class GameScene: SKScene {
         }
     }
     
+    func makeBackground() {
+        
+        let backgroundTexture = SKTexture(imageNamed: "bg2.jpg")
+        
+        //move background right to left; replace
+        let shiftBackground = SKAction.moveBy(x: -backgroundTexture.size().width, y: 0, duration: 9)
+        let replaceBackground = SKAction.moveBy(x: backgroundTexture.size().width, y:0, duration: 0)
+        let movingAndReplacingBackground = SKAction.repeatForever(SKAction.sequence([shiftBackground,replaceBackground]))
+        
+        for i in 0  ..< 3{
+            let o = CGFloat(i)
+            //defining background; giving it height and moving width
+            let background=SKSpriteNode(texture:backgroundTexture)
+            background.position = CGPoint(x: backgroundTexture.size().width/2 + (backgroundTexture.size().width * o), y: self.frame.midY)
+            background.size.height = self.frame.height
+            background.run(movingAndReplacingBackground)
+            
+            self.addChild(background)
+        }
+    }
     
     override func update(_ currentTime: TimeInterval) {
+        if currentTime - lastTime > 15 {
+            lastTime=currentTime
+            cloudGen.startGenWithSpanTime()
+        }
+       // cloudGen.startGenWithSpanTime()
         // Called before each frame is rendered
     }
 }
