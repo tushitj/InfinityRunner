@@ -19,6 +19,7 @@
 		1788708A1E766EF0001D5470 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 178870891E766EF0001D5470 /* tree.png */; };
 		1788708C1E767567001D5470 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 1788708B1E767567001D5470 /* coin.png */; };
 		178870901E76769F001D5470 /* CoinGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1788708F1E76769F001D5470 /* CoinGenerator.swift */; };
+		178870921E76872C001D5470 /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178870911E76872C001D5470 /* Points.swift */; };
 		17AF05B51E6E3CDC001A4A1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF05B41E6E3CDC001A4A1B /* AppDelegate.swift */; };
 		17AF05B91E6E3CDC001A4A1B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17AF05B81E6E3CDC001A4A1B /* Actions.sks */; };
 		17AF05BB1E6E3CDC001A4A1B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF05BA1E6E3CDC001A4A1B /* GameScene.swift */; };
@@ -62,6 +63,7 @@
 		178870891E766EF0001D5470 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
 		1788708B1E767567001D5470 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
 		1788708F1E76769F001D5470 /* CoinGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinGenerator.swift; sourceTree = "<group>"; };
+		178870911E76872C001D5470 /* Points.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
 		17AF05B11E6E3CDC001A4A1B /* endlessRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = endlessRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AF05B41E6E3CDC001A4A1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17AF05B81E6E3CDC001A4A1B /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				17AF05B41E6E3CDC001A4A1B /* AppDelegate.swift */,
 				17AF05B81E6E3CDC001A4A1B /* Actions.sks */,
 				17AF05BA1E6E3CDC001A4A1B /* GameScene.swift */,
+				178870911E76872C001D5470 /* Points.swift */,
 				175637951E73A4CF001C7901 /* WallGenerator.swift */,
 				175637971E73A4E6001C7901 /* Wall.swift */,
 				170544A01E728BC00023F98E /* cloudGenerator.swift */,
@@ -321,6 +324,7 @@
 				175637981E73A4E6001C7901 /* Wall.swift in Sources */,
 				17AF05E91E6E5E2D001A4A1B /* MovingGround.swift in Sources */,
 				1756379A1E73CD94001C7901 /* CONSTANTS.swift in Sources */,
+				178870921E76872C001D5470 /* Points.swift in Sources */,
 				176D59F61E72F6F500A26546 /* cloudClass.swift in Sources */,
 				17AF05BB1E6E3CDC001A4A1B /* GameScene.swift in Sources */,
 				170544A11E728BC00023F98E /* cloudGenerator.swift in Sources */,

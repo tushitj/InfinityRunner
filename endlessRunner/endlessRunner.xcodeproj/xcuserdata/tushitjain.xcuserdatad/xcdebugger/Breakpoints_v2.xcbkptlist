@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "endlessRunner/GameScene.swift"
-            timestampString = "511083832.774512"
+            timestampString = "511086697.429472"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "didBegin(_:)"
             landmarkType = "7">
          </BreakpointContent>

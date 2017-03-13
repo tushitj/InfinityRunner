@@ -59,9 +59,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         tapToStart.position.y = view.center.y + 35
         tapToStart.fontColor = UIColor.brown
         addChild(tapToStart)
-       
+        addPointsLabel()
+        loadScore()
         physicsWorld.contactDelegate = self
 
+    }
+    
+    func loadScore(){
+        let defaults = UserDefaults.standard
+        let highScore = childNode(withName: "highScore") as! Points
+        highScore.setTo(number: defaults.integer(forKey: "highScore"))
     }
     
     func start(){
@@ -91,8 +98,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         else{
             hero.flip()
+            let pointsLabel = childNode(withName: "pointsLabel") as! Points
+            pointsLabel.incrementPoints()
+
         }
     }
+    
+    func addPointsLabel(){
+        let pointslabel = Points(num: 0)
+        pointslabel.position = CGPoint(x: 20.0, y: view!.frame.size.height - 35)
+        pointslabel.name="pointsLabel"
+        addChild(pointslabel)
+        let highScoreLabel = Points(num: 0)
+        highScoreLabel.position = CGPoint(x: view!.frame.size.width - 35, y: view!.frame.size.height - 35)
+        highScoreLabel.name="highScore"
+        addChild(highScoreLabel)
+    }
+    
+    
     
     func makeBackground() {
         
@@ -115,6 +138,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     override func update(_ currentTime: TimeInterval) {
+        
+        
         if currentTime - lastTime > 15 {
             lastTime=currentTime
             cloudGen.startGenWithSpanTime()
@@ -139,6 +164,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOverLabel.fontColor = UIColor.brown
         addChild(gameOverLabel)
 
+        let pointsLabel = childNode(withName: "pointsLabel") as! Points
+        let highScore = childNode(withName: "highScore") as! Points
+        
+        if highScore.number < pointsLabel.number{
+            highScore.setTo(number: pointsLabel.number)
+            
+            let defaults = UserDefaults.standard
+            defaults.set(highScore.number, forKey: "highScore")
+            
+        }
         
     }
     
