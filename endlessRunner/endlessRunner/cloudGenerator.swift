@@ -35,7 +35,11 @@ class cloudGenerator:SKSpriteNode{
         cloud.position = CGPoint(x: x, y: y)
         cloud.zPosition = -1
         addChild(cloud)
-        
+
+    }
+    
+    func stopGenerating(){
+        //genTimer.invalidate()
         
         
     }

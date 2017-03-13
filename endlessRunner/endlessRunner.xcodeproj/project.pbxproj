@@ -16,6 +16,9 @@
 		176D59FA1E73068300A26546 /* maxresdefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 176D59F91E73068300A26546 /* maxresdefault.jpg */; };
 		176D59FC1E73089200A26546 /* bg2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 176D59FB1E73089200A26546 /* bg2.jpg */; };
 		177ED9411E722CDD0006C78E /* bee.png in Resources */ = {isa = PBXBuildFile; fileRef = 177ED9401E722CDD0006C78E /* bee.png */; };
+		1788708A1E766EF0001D5470 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 178870891E766EF0001D5470 /* tree.png */; };
+		1788708C1E767567001D5470 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 1788708B1E767567001D5470 /* coin.png */; };
+		178870901E76769F001D5470 /* CoinGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1788708F1E76769F001D5470 /* CoinGenerator.swift */; };
 		17AF05B51E6E3CDC001A4A1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF05B41E6E3CDC001A4A1B /* AppDelegate.swift */; };
 		17AF05B91E6E3CDC001A4A1B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17AF05B81E6E3CDC001A4A1B /* Actions.sks */; };
 		17AF05BB1E6E3CDC001A4A1B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF05BA1E6E3CDC001A4A1B /* GameScene.swift */; };
@@ -56,6 +59,9 @@
 		176D59F91E73068300A26546 /* maxresdefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maxresdefault.jpg; sourceTree = "<group>"; };
 		176D59FB1E73089200A26546 /* bg2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg2.jpg; sourceTree = "<group>"; };
 		177ED9401E722CDD0006C78E /* bee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bee.png; sourceTree = "<group>"; };
+		178870891E766EF0001D5470 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
+		1788708B1E767567001D5470 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
+		1788708F1E76769F001D5470 /* CoinGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinGenerator.swift; sourceTree = "<group>"; };
 		17AF05B11E6E3CDC001A4A1B /* endlessRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = endlessRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AF05B41E6E3CDC001A4A1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17AF05B81E6E3CDC001A4A1B /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -134,12 +140,15 @@
 				175637991E73CD94001C7901 /* CONSTANTS.swift */,
 				17EBF2F11E6F2AF200D523F9 /* Hero.swift */,
 				17AF05BC1E6E3CDC001A4A1B /* GameViewController.swift */,
+				1788708F1E76769F001D5470 /* CoinGenerator.swift */,
 				17AF05BE1E6E3CDC001A4A1B /* Main.storyboard */,
 				17AF05C11E6E3CDC001A4A1B /* Assets.xcassets */,
 				17AF05C31E6E3CDC001A4A1B /* LaunchScreen.storyboard */,
 				17AF05C61E6E3CDC001A4A1B /* Info.plist */,
 				176D59F91E73068300A26546 /* maxresdefault.jpg */,
 				176D59F71E73061700A26546 /* bg1.jpg */,
+				1788708B1E767567001D5470 /* coin.png */,
+				178870891E766EF0001D5470 /* tree.png */,
 				176D59FB1E73089200A26546 /* bg2.jpg */,
 				177ED9401E722CDD0006C78E /* bee.png */,
 			);
@@ -276,9 +285,11 @@
 			files = (
 				17AF05C01E6E3CDC001A4A1B /* Main.storyboard in Resources */,
 				176D59FC1E73089200A26546 /* bg2.jpg in Resources */,
+				1788708A1E766EF0001D5470 /* tree.png in Resources */,
 				177ED9411E722CDD0006C78E /* bee.png in Resources */,
 				17AF05C21E6E3CDC001A4A1B /* Assets.xcassets in Resources */,
 				17AF05C51E6E3CDC001A4A1B /* LaunchScreen.storyboard in Resources */,
+				1788708C1E767567001D5470 /* coin.png in Resources */,
 				176D59FA1E73068300A26546 /* maxresdefault.jpg in Resources */,
 				176D59F81E73061700A26546 /* bg1.jpg in Resources */,
 				17AF05B91E6E3CDC001A4A1B /* Actions.sks in Resources */,
@@ -315,6 +326,7 @@
 				170544A11E728BC00023F98E /* cloudGenerator.swift in Sources */,
 				175637961E73A4CF001C7901 /* WallGenerator.swift in Sources */,
 				17AF05BD1E6E3CDC001A4A1B /* GameViewController.swift in Sources */,
+				178870901E76769F001D5470 /* CoinGenerator.swift in Sources */,
 				17AF05B51E6E3CDC001A4A1B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

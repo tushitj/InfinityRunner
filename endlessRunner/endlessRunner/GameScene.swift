@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
@@ -20,6 +20,7 @@ class GameScene: SKScene {
     
     var lastTime : TimeInterval = 0
     var isStarted = false
+    var isGameOver = false
     
     override func didMove(to view: SKView) {
         view.showsNodeCount = true;
@@ -59,6 +60,7 @@ class GameScene: SKScene {
         tapToStart.fontColor = UIColor.brown
         addChild(tapToStart)
        
+        physicsWorld.contactDelegate = self
 
     }
     
@@ -72,7 +74,18 @@ class GameScene: SKScene {
          wallGen.startGeneratingWall(seconds: 1)
     }
 
+    func restart(){
+        cloudGen.stopGenerating()
+        let newScene = GameScene(size: view!.bounds.size)
+        newScene.scaleMode = .aspectFill
+        view!.presentScene(newScene)
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if isGameOver{
+            restart()
+        }
+        
+        
         if !isStarted{
             start()
         }
@@ -101,7 +114,6 @@ class GameScene: SKScene {
             self.addChild(background)
         }
     }
-    
     override func update(_ currentTime: TimeInterval) {
         if currentTime - lastTime > 15 {
             lastTime=currentTime
@@ -109,5 +121,29 @@ class GameScene: SKScene {
         }
        // cloudGen.startGenWithSpanTime()
         // Called before each frame is rendered
+    }
+    
+    func gameOver(){
+        isGameOver = true
+        
+        hero.physicsBody = nil
+        wallGen.stopWalls()
+        movingGround.stop()
+        hero.stop()
+        
+        let gameOverLabel = SKLabelNode(text : "Game Over")
+        gameOverLabel.name = "startLabel"
+        gameOverLabel.fontName = "Helvetica"
+        gameOverLabel.position.x = view!.center.x
+        gameOverLabel.position.y = view!.center.y + 35
+        gameOverLabel.fontColor = UIColor.brown
+        addChild(gameOverLabel)
+
+        
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        print("Smee")
+        gameOver()
     }
 }

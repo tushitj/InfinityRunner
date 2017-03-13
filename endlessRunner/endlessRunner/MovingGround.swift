@@ -48,4 +48,8 @@ class MovingGround: SKSpriteNode {
         run(SKAction.repeatForever(moveSequence))
     }
     
+    func stop(){
+        removeAllActions()
+    }
+    
 }

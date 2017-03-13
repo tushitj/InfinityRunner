@@ -10,20 +10,32 @@ import Foundation
 import SpriteKit
 
 class Wall:SKSpriteNode {
-    let wallWidth:CGFloat = 30.0
-    let wallHeight:CGFloat = 50.0
-    let wallColor = UIColor.black
+    let wallWidth:CGFloat = 35.0
+    let wallHeight:CGFloat = 55.0
+    let wallColor = UIColor.clear
     
     init(){
-        super.init(texture: nil, color:wallColor , size: CGSize(width: wallWidth, height: wallHeight))
+        let textures = SKTexture(image: #imageLiteral(resourceName: "tree.png"))
+        super.init(texture: textures, color:wallColor , size: CGSize(width: wallWidth, height: wallHeight))
         startMoving()
+        loadPhysicsBody(size: CGSize(width: wallWidth, height: wallHeight))
     }
-    
+    func loadPhysicsBody(size: CGSize){
+        
+        physicsBody = SKPhysicsBody(rectangleOf: size)
+        physicsBody?.contactTestBitMask = heroCat
+        physicsBody?.affectedByGravity = false
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     func startMoving(){
         let moveLeft = SKAction.moveBy(x: -320, y: 0, duration: 1)
         run(SKAction.repeatForever(moveLeft))
+    }
+    
+    func stopMoving(){
+        removeAllActions()
+        
     }
 }
