@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 let GroundHeight : CGFloat = 20.0
 let defaultMoveToX : CGFloat = 320.0
-
 let heroCat:UInt32 = 0x1 << 0
 let wallCat:UInt32 = 0x1 << 1
 let coinCat:UInt32 = 0x1 << 2

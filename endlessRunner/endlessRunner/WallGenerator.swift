@@ -5,19 +5,13 @@
 //  Created by Tushit Jain on 3/10/17.
 //  Copyright © 2017 Tushit Jain. All rights reserved.
 //
-
 import Foundation
 import SpriteKit
-
 class WallGenerator:SKSpriteNode {
     var generationTimer : Timer!
     var walls = [Wall]()
-    
-    
     func startGeneratingWall(seconds : TimeInterval){
         generationTimer = Timer.scheduledTimer(timeInterval: seconds,target: self , selector:#selector(WallGenerator.generatedWall) ,userInfo:nil , repeats: true)
-        
-        
     }
     func stopGenerating(){
         generationTimer.invalidate()
@@ -27,7 +21,6 @@ class WallGenerator:SKSpriteNode {
         let rand = arc4random_uniform(2)
         if rand == 0 {
             scale = -1.0
-            
         }
         else{
             scale = 1.0
@@ -41,7 +34,6 @@ class WallGenerator:SKSpriteNode {
         walls.append(wall)
         addChild(wall)
     }
-    
     func flip(){
         //let translate = SKAction.moveBy(x: 0, y: scale*(size.height + 20), duration: 1)
         let flip = SKAction.scaleY(to: -1, duration: 1)
@@ -54,6 +46,4 @@ class WallGenerator:SKSpriteNode {
             wall.stopMoving()
         }
     }
-    
 }
-
